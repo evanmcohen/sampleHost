@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<OpenCOBData id="SubjectExtractor">
+    <ExtractorSpec platform="gmail" language="en">
+            <Response platform="gmail" format="cardgadget">
+                    <Output name="email_body">{@__FROM_ADDRESS__}</Output>
+            </Response>
+    </ExtractorSpec>
+</OpenCOBData>
+

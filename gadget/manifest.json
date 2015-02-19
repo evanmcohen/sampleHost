@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+
+    "name": "Autotask Gadget",
+    "version": "0.0.0.1",
+    "description": "Autotask Gadget",
+    
+    "container": ["DOMAIN_INSTALLABLE"],
+    
+    "icons": {
+        "128": "icons/128px-icon.png",
+        "16": "icons/16px-icon.png"
+    },
+    
+    "api_console_project_id": "808908976441"
+}

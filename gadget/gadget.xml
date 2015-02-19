@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+
+    <ModulePrefs  title="The Complete IT Business Management Solution">
+            <Link rel="icon" href="http://partners.webnersolutions.com/googlegadget/test/autotask_logo.ico"/>
+            <Require feature="dynamic-height"/>
+            <Require feature="google.contentmatch">
+               <Param name="extractors">
+                    google.com:MessageIDExtractor,
+                    google.com:SenderEmailExtractor,
+                    google.com:RawSubjectExtractor,
+                    google.com:RecipientEmailExtractor
+               </Param>
+            </Require>
+    </ModulePrefs>
+
+    <!-- Define the content type and display location. The settings
+    "html" and "card" are required for all Gmail contextual gadgets. 
+    6ab8d2-->
+
+    <Content type="html" view="card">
+    <![CDATA[
+
+    <!-- Version 1.0 Beta -->
+    
+    <!-- START: EXTERNAL SCRIPTS/FILES -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <!-- END: EXTERNAL SCRIPTS/FILES -->
+    
+	
+
+    <!-- START: STYLE AND CSS -->
+    <style type="text/css">
+        * {
+            font-size: 11px;
+            font-family: Tahoma, Geneva, sans-serif;
+            color: #333;	
+        }
+
+        a {
+            color: #1370C9;	
+        }
+
+        .done_message {
+            border-left: 3px solid #693;
+            background-color: #edf6e5;
+            color: #693;
+            padding: 5px;
+            margin: 5px 0px;
+        }
+
+        .error_message {
+            border-left: 3px solid #ac1111;
+            background-color: #f7e8e8;
+            color: #ac1111;
+            padding: 5px;
+            margin: 5px 0px;
+        }
+
+        #main_container {
+            border: 1px solid #00447f;
+            border-radius: 5px;	
+            padding: 7px;
+            margin-bottom: 2px;
+            margin-top: 2px;
+            overflow: auto;
+        }
+
+        #main_container h1 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #00447f;	
+        }
+
+        #main_container .div_button {
+            margin-left: 3px;
+            margin-right: 3px;
+            padding: 2px 3px;
+            border: 1px solid #00447F;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #00447F;
+            float: left;
+            cursor: pointer;
+        }
+
+        #main_container .div_button:hover {
+            background-color: #DF013A;
+            border: 1px solid #950328;
+        }
+
+        form .title {
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px;
+            padding-left: 0px;	
+        }
+
+        .input_text {
+            padding-bottom: 8px;
+            width: 300px;
+            border: 0px;
+            border-bottom: 1px solid #c1c1c1;
+            outline: none;
+            float: left;
+        }
+
+        .input_button {
+            margin-left: 3px;
+            margin-right: 3px;
+            padding: 2px 3px;
+            border: 1px solid #84a2bd;
+            border-radius: 5px;
+            color: #84a2bd;
+            background-color: #fff;
+            float: left;
+            cursor: pointer;
+        }      
+        
+        .note_text {
+            color: red;
+        }
+        
+        #quick_message {
+            padding-bottom: 4px;
+            color: red;
+        }
+        
+        .sub_container {
+            margin-top: 5px; 
+            padding-top: 5px;
+            border-top: 1px solid #84a2bd;
+        }
+    </style>
+    <!-- END: STYLE AND CSS -->
+
+    <!-- START: PAGE MAIN CONTENT -->
+    <div id='main_container'>
+    
+    	<div style="overflow: auto;">
+            
+            <div class="div_button" onclick="window.open('https://app.googleautotask.com/app','popup');">Sync</div>
+            <div class="div_button" onclick="window.open('https://ww2.autotask.net/autotask/popups/Accounts/new_account.aspx','popup');">New Account</div>
+            <div class="div_button" onclick="window.open('https://ww2.autotask.net/autotask35/AdminSetup/UserProfile.aspx?UserId=0&FromSP=1','popup');">New Contact</div>
+            <div class="div_button" onclick="window.open('https://ww2.autotask.net/autotask/views/ServiceDesk/ServiceDeskTicket/service_ticket_new.aspx','popup');">New Ticket</div>
+            <div class="div_button" onclick="window.open('https://app.googleautotask.com/app','popup');">Settings</div>
+			<div class="div_button" onclick="window.open('http://www.googleautotask.com/support','popup');">Support</div>
+	</div>
+        
+    
+        
+    	<!-- GADGET FORMS -->
+        <div id="home_container" style="overflow: auto; display: none;" class="sub_container">
+        	Some description about using the gadget.
+        </div>
+        
+    <!-- END: PAGE MAIN CONTENT -->
+
+    <!-- START: JAVASCRIPT AND JQUERY -->
+ 
+    <!-- END: JAVASCRIPT AND JQUERY -->
+    
+    ]]>
+    </Content>
+</Module>

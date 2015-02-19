@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationManifest xmlns="http://schemas.google.com/ApplicationManifest/2009">
+    <!--
+     Support info to show in the marketplace & control panel 
+    -->
+    <Support>
+        <Link rel="manage" href="http://googleautotask.com/"/>
+        <Link rel="support" href="http://googleautotask.com/support/"/>
+        <Link rel="deletion-policy" href="http://googleautotask.com/policies"/>
+    </Support>
+
+    <!--  Name and description pulled from message bundles  -->
+    <Name>AutoTask Gadget</Name>
+    <Description>
+        A Gmail gadget for AutoTask System.
+    </Description>
+
+    <Extension id="realm" type="openIdRealm">
+        <Url>http://googleautotask.com/</Url>
+    </Extension>
+
+
+    <!--  EXTRACTOR  -->
+    <Extension id="MessageBodyExtractor" type="contextExtractor">
+        <Name>Message ID Extractor</Name>
+        <Url>google.com:EmailBodyExtractor</Url>
+        <Param name="body" value=".*"/>
+        <Triggers ref="autotaskGadget"/>
+        <Scope ref="emailBody"/>
+        <Container name="mail"/>
+    </Extension>
+
+    <Extension id="RecipientEmailExtractor" type="contextExtractor">
+        <Name>Recipient email extractor</Name>
+        <Url>google.com:RecipientEmailExtractor</Url>
+        <Param name="recipient_email" value="*"/>
+        <Triggers ref="autotaskGadget"/>
+        <Scope ref="emailtoAddress"/>
+        <Scope ref="emailCC"/>
+        <Container name="mail"/>
+    </Extension>
+
+    <Extension id="SenderEmailExtractor" type="contextExtractor">
+        <Name>Sender Email Extractor</Name>
+        <Url>google.com:RecipientToEmailExtractor</Url>
+        <Param name="sender_email" value=".*"/>
+        <Triggers ref="autotaskGadget" />
+        <Scope ref="emailSender"/>
+        <Container name="mail"/>
+    </Extension>
+
+    <Extension id="RawSubjectExtractor" type="contextExtractor">
+        <Name>Raw Subject Extractor</Name>
+        <Url>google.com:RawSubjectExtractor</Url>
+        <Param name="subject" value=".*"/>
+        <Triggers ref="autotaskGadget" />
+        <Scope ref="rawemailSubject"/>
+        <Container name="mail"/>
+    </Extension>
+
+
+    <!--  GADGET  -->
+    <Extension id="autotaskGadget" type="gadget">
+        <Name>AutoTask gadget</Name>
+        <Url>https://app.googleautotask.com/gadget/gadget.xml</Url>
+        <Container name="mail"/>
+    </Extension>
+
+
+    <!--  SCOPE  -->
+    <Scope id="emailMessage_ID">
+        <Url>tag:google.com,2010:auth/contextual/extractor/MESSAGE_ID</Url>
+        <Reason>This application searches for the Message ID field of an email.</Reason>
+    </Scope>
+    <Scope id="emailtoAddress">
+        <Url>tag:google.com,2010:auth/contextual/extractor/TO_ADDRESS</Url>
+        <Reason>This application searches for the To field of an email</Reason>
+    </Scope>
+    <Scope id="emailCC">
+        <Url>tag:google.com,2010:auth/contextual/extractor/CC_EMAIL</Url>
+        <Reason>This application searches for the CC field of an email</Reason>
+    </Scope>
+    <Scope id="emailSender">
+        <Url>tag:google.com,2010:auth/contextual/extractor/FROM_ADDRESS</Url>
+        <Reason>This application searches for the From field of an email.</Reason>
+    </Scope>
+    <Scope id="rawemailSubject">
+        <Url>tag:google.com,2010:auth/contextual/extractor/RAW_SUBJECT</Url>
+        <Reason>This application searches for the Subject field of an email.</Reason>
+    </Scope>
+    <Scope id="emailBody">
+        <Url>tag:google.com,2010:auth/contextual/extractor/BODY</Url>
+        <Reason>Read the message body</Reason>
+    </Scope>
+</ApplicationManifest>
